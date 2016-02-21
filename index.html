@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="video-container">
+    <!-- Video -->
+    <video id="video" controls preload="metadata">
+        <source src="video/video.mp4" type="video/mp4">
+        <source src="video/video.ogg" type="video/ogg">
+        <p>
+            Your browser doesn't support HTML5 video.
+        </p>
+        <track id="main-track" label="English" kind="captions" srclang="en" src="video/captions.vtt">
+    </video>
+    <!-- Video Controls -->
+    <div id="video-controls">
+        <div id="progress">
+            <div id="progress-bar"></div>
+        </div>
+        <div class="buttons">
+            <img id="play-pause" class="play icon" src="icons/play.png" alt="play">
+            <span id="time-display"></span>
+            <img id="mute" src="icons/volume.png" class="icon" alt="volume">
+            <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
+            <img id="cc" src="icons/ccoff.png" class="icon" alt="Closed Captions">
+            <p id="speed-display-holder"><span id="speed-display">Speed: 1x</span></p>
+            <input type="range" id="playrate" min="0.5" max="2" step="0.25" value="1">
+            <img id="full-screen" src="icons/fullsize.png" class="icon" alt="fullscreen">
+        </div>
+    </div>
+</div>
+    <div id="captions-container">
+        <p id="captions">
+            <span data-startTime="0" data-endTime="4.129">Now that we've looked at the architecture
+                of the internet, let's see how you might</span>
+            <span data-startTime="4.13" data-endTime="7.534">connect your personal devices to
+                the internet inside your house.</span>
+            <span data-startTime="7.535" data-endTime="11.269">Well there are many ways to
+                connect to the internet, and</span>
+            <span data-startTime="11.270" data-endTime="13.959">most often people connect wirelessly.</span>
+            <span data-startTime="13.960" data-endTime="17.939">Let's look at an example of how
+                you can connect to the internet.</span>
+            <span data-startTime="17.940" data-endTime="22.369">If you live in a city or a town,
+                you probably have a coaxial cable for</span>
+            <span data-startTime="22.370" data-endTime="26.879">cable Internet, or a phone line if you
+                have DSL, running to the outside of</span>
+            <span data-startTime="26.880" data-endTime="30.919">your house, that connects you to
+                the Internet Service Provider, or ISP.</span>
+            <span data-startTime="32.100" data-endTime="34.729">If you live far out in the country,
+                you'll more likely have</span>
+            <span data-startTime="34.730" data-endTime="39.429">a dish outside your house, connecting
+                you wirelessly to your closest ISP, or</span>
+            <span data-startTime="39.430" data-endTime="41.189">you might also use the telephone system.</span>
+            <span data-startTime="42.350" data-endTime="46.299">Whether a wire comes straight from
+                the ISP hookup outside your house, or</span>
+            <span data-startTime="46.300" data-endTime="49.269">it travels over radio
+                waves from your roof,</span>
+            <span data-startTime="49.270" data-endTime="53.759">the first stop a wire will make once
+                inside your house, is at your modem.</span>
+            <span data-startTime="53.760" data-endTime="57.779">A modem is what connects the internet
+                to your network at home.</span>
+            <span data-startTime="57.780" data-endTime="60.149">A few common residential modems are DSL or</span>
+
+        </p>
+    </div>
+    <script src="js/videocontrols.js"></script>
+    <script src="js/captionhighlight.js"></script>
+</body>
+</html>
