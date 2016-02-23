@@ -16,12 +16,15 @@ video.addEventListener("timeupdate", function() {
     }
 });
 
+function captionClickHandler() {
+    return function() {
+        var startTime = parseFloat(this.dataset.starttime);
+        video.currentTime = startTime;
+    }
+}
+
 //For each span element in captions paragraph
 for (var i = 0; i < captionsList.length; i++) {
-    //When clicked
-    captionsList[i].addEventListener("click", function() {
-        var startTime = parseFloat(this.dataset.starttime);
-        //skip to the time in the video where this particular caption starts
-        video.currentTime = startTime;
-    });
+    //When clicked skip to the time in the video where this particular caption starts
+    captionsList[i].addEventListener("click", captionClickHandler());
 }

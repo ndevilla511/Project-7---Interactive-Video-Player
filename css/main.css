@@ -16,10 +16,12 @@
 }
 
 #video-controls {
+    height: auto;
+    color: white;
     background-color: rgba(34, 34, 34, 0.8);
     padding: 6px;
     position: relative;
-    top: -69px;
+    top: -72px;
 }
 
 #video {
@@ -33,6 +35,7 @@
     width: 100%;
     background-color: lightgray;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 
@@ -43,7 +46,7 @@
     background-color: #369;
 }
 
-.buttons {
+#buttons-container {
     width: 100%;
     margin-top: 5px;
     display: inline-flex;
@@ -55,11 +58,14 @@
 
 #time-display {
     margin-left: 5px;
-    color: white;
+}
+
+label[for="volume-bar"] {
+    margin-left: 30px;
 }
 
 #mute {
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 #volume-bar {
@@ -82,20 +88,20 @@
     cursor: pointer;
 }
 #captions {
+    margin-top: 5px;
     cursor: pointer;
     display: inline-block;
     float: left;
 }
 
-#speed-display-holder {
+label[for="playrate"] {
     width: 115px;
     text-align: right;
     white-space: nowrap;
 }
-#speed-display {
 
+#speed-display {
     margin-left: 20px;
-    color: white;
 }
 
 #playrate {

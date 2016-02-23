@@ -23,13 +23,14 @@
         <div id="progress">
             <div id="progress-bar"></div>
         </div>
-        <div class="buttons">
+        <div id="buttons-container">
             <img id="play-pause" class="play icon" src="icons/play.png" alt="play">
             <span id="time-display"></span>
+            <label for="volume-bar">Volume</label>
             <img id="mute" src="icons/volume.png" class="icon" alt="volume">
             <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
             <img id="cc" src="icons/ccoff.png" class="icon" alt="Closed Captions">
-            <p id="speed-display-holder"><span id="speed-display">Speed: 1x</span></p>
+            <label for="playrate"><span id="speed-display">Speed: 1x</span></label>
             <input type="range" id="playrate" min="0.5" max="2" step="0.25" value="1">
             <img id="full-screen" src="icons/fullsize.png" class="icon" alt="fullscreen">
         </div>

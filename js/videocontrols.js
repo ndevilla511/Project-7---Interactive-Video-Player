@@ -6,6 +6,7 @@ window.onload = function() {
     var videoControls = document.getElementById("video-controls");
 
     // Buttons
+    var buttonsContainer = document.getElementById("buttons-container");
     var playButton = document.getElementById("play-pause");
     var muteButton = document.getElementById("mute");
     var ccButton = document.getElementById("cc");
@@ -30,11 +31,13 @@ window.onload = function() {
         playButton.style.display = displayValue;
         timeDisplay.style.display = displayValue;
         muteButton.style.display = displayValue;
-        volumeBar.style.display = displayValue;
-        ccButton.style.display = displayValue;
-        fullScreenButton.style.display = displayValue;
-        speedBar.style.display = displayValue;
+        volumeBar.style.display=displayValue;
+        ccButton.style.display=displayValue;
         speedDisplay.style.display = displayValue;
+        speedBar.style.display=displayValue;
+        fullScreenButton.style.display = displayValue;
+        document.querySelector("label[for='volume-bar']").style.display = displayValue;
+        document.querySelector("label[for='playrate']").style.display = displayValue;
     }
 
     //function to hide or show controls
@@ -42,19 +45,30 @@ window.onload = function() {
         switch (value) {
             case "hide":
                 setDisplay("none");
+                buttonsContainer.style.display = "none";
                 videoControls.style.backgroundColor = "rgba(34, 34, 34, 0)";
-                videoControls.style.top = "-26px";
+                videoControls.style.top = "-22px";
+                videoControls.style.height = "3px";
+                videoControls.style.paddingTop = "0";
+                videoControls.style.paddingBottom = "0";
                 progressHolder.style.height = "3px";
                 progressHolder.style.borderRadius = "0";
                 progressBar.style.borderRadius = "0";
+                buttonsContainer.style.height = "0";
+                buttonsContainer.style.marginTop = "0";
                 break;
             case "show":
                 setDisplay("inline-block");
+                buttonsContainer.style.display = "inline-flex";
                 videoControls.style.backgroundColor = "rgba(34, 34, 34, 0.8)";
-                videoControls.style.top = "-69px";
+                videoControls.style.top = "-72px";
+                videoControls.style.height = "69px";
+                videoControls.style.padding = "6px";
                 progressHolder.style.height = "10px";
                 progressHolder.style.borderRadius = "20px";
                 progressBar.style.borderRadius = "20px";
+                buttonsContainer.style.height = "30px";
+                buttonsContainer.style.marginTop = "5px";
                 break;
         }
     }
@@ -66,7 +80,7 @@ window.onload = function() {
             video.currentTime = 0;
             video.play();
 
-        } else if (video.paused == true) {
+        } else if (video.paused === true) {
             // Play the video
             video.play();
 
@@ -84,7 +98,7 @@ window.onload = function() {
     // Event listener for the mute button
     muteButton.addEventListener("click", function() {
         var currentVolume = video.volume;
-        if (video.muted == false) {
+        if (video.muted === false) {
             // Mute the video
             video.muted = true;
 
@@ -107,7 +121,7 @@ window.onload = function() {
 
     //Event listener for volume bar
     volumeBar.addEventListener("click", function() {
-        if (video.muted == true) {
+        if (video.muted === true) {
             // Unmute the video
             video.muted = false;
 
@@ -187,7 +201,7 @@ window.onload = function() {
         if (document.mozFullScreen) {
             videoContainer.style.width = "100%";
             videoContainer.style.height = "100%";
-            fullScreenButton.src = "icons/smallscreen.png"
+            fullScreenButton.src = "icons/smallscreen.png";
         } else {
             videoContainer.style.width = "900px";
             videoContainer.style.height = "506px";
